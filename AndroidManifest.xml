@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="soburi.akibaikuyo"
+      xmlns:myapp="http://schemas.android.com/apk/res/soburi.akibaikuyo"
+
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="3" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+
+    	<activity android:name=".MainActivity">
+    		<intent-filter>
+    			<action android:name="android.intent.action.MAIN"></action>
+    			<category android:name="android.intent.category.LAUNCHER"></category>
+    		</intent-filter>
+    	</activity>
+    	<activity android:name=".OAuthActivity">
+    		<intent-filter>
+    			<action android:name="android.intent.action.MAIN"></action>
+    			<category android:name="android.intent.category.DEFAULT"></category>
+    		</intent-filter>
+    	</activity>
+    	<activity android:name=".TransitScrapingActivity">
+    		<intent-filter>
+    			<action android:name="android.intent.action.MAIN"></action>
+    			<category android:name="android.intent.category.DEFAULT"></category>
+    		</intent-filter>
+    	</activity>
+    	<activity android:name=".AboutActivity">
+    		<intent-filter>
+    			<action android:name="android.intent.action.MAIN"></action>
+    			<category android:name="android.intent.category.DEFAULT"></category>
+    		</intent-filter>
+    	</activity>
+		<activity android:name="com.admob.android.ads.AdMobActivity"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:configChanges="orientation|keyboard|keyboardHidden">
+			<receiver android:name="com.admob.android.ads.analytics.InstallReceiver" android:exported="true">
+				<intent-filter>
+					<action android:name="com.android.vending.INSTALL_REFERRER" />
+				</intent-filter>
+			</receiver>
+		</activity>
+		<meta-data android:value="パブリッシャーID" android:name="ADMOB_PUBLISHER_ID" />
+	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
